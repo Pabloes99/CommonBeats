@@ -1,0 +1,45 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/primaryDarkColor</item>
+        <item name="colorAccent">@color/secondaryColor</item>
+    </style>
+
+    <style name="SplashTheme" parent="AppTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowBackground"></item>
+    </style>
+
+    <style name="LocalTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/secondaryColor</item>
+    </style>
+
+    <!-- Vamos a crear una serie de estilos a través de la herencia -->
+    <style name="Widget" parent="@android:style/Widget">
+
+    </style>
+
+    <style name="Widget.Button">
+        <item name="android:textColor">@color/secondaryColor</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceSmall</item>
+    </style>
+
+    <style name="Widget.Button.Trannsparent">
+        <item name="android:background">@null</item>
+    </style>
+
+    <!-- Estilos propios de componentes -->
+    <style name="CheckBoxLogin">
+        <item name="android:buttonTint">@color/primaryDarkColor</item>
+    </style>
+
+    <style name="Widget.TextInputError">
+        <item name="android:textColor">@color/errorTextInputLayout</item>
+    </style>
+
+
+</resources>

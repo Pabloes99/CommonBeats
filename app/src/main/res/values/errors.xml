@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="errUserEmpty">Empty User</string>
+    <string name="errPasswordWrong">Password need a capital letter and a number</string>
+    <string name="errEmailWrong">Introduce a valid email</string>
+    <string name="errShortNameEmpty">El nombre corto no puede estar vacío</string>
+    <string name="errNameEmpty">El nombbre no puede estar vacío</string>
+    <string name="errDescriptionEmpty">La descripcion no puede estar vacía</string>
+</resources>

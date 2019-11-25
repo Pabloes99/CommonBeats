@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/llLoginActivityPadding"
+    tools:context=".iu.LoginActivity"
+    >
+
+    <TextView
+        android:id="@+id/tvUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tvUser" />
+
+    <EditText
+        android:id="@+id/edUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/tvPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/tvLoginMarginTop"
+        android:text="@string/tvPassword" />
+
+    <EditText
+        android:id="@+id/edPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/chRemember"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/chRemember" />
+
+        <!-- Se puede establecer el fondo a color transaparente y se elimina
+         el fondo mediante el atributo @android:color/transparent-->
+        <Button
+            android:id="@+id/btSignUp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/btSignUp"
+            style="@style/Widget.Button.Trannsparent"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btSignIn"
+        android:layout_marginTop="@dimen/btSignInLoginMarginTop"
+        android:layout_width="@dimen/btSignInLoginWidth"
+        android:layout_height="@dimen/btSignInLoginHeight"
+        android:layout_gravity="center"
+        android:text="@string/btSignIn"
+        android:textColor="@android:color/white"
+        android:background="@drawable/selector_round_corner"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <TextView
+        android:id="@+id/tvOtherSign"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tvOtherSign"
+        android:gravity="center"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center_horizontal">
+
+        <ImageButton
+            android:id="@+id/btGoogle"
+            android:layout_margin="@dimen/imgLoginMargin"
+            android:layout_width="@dimen/imgLoginWidth"
+            android:layout_height="@dimen/imgLoginHeight"
+            android:background="@drawable/ic_search"/>
+
+        <ImageButton
+            android:id="@+id/btTwitter"
+            android:layout_margin="@dimen/imgLoginMargin"
+            android:layout_width="@dimen/imgLoginWidth"
+            android:layout_height="@dimen/imgLoginHeight"
+            android:background="@drawable/ic_twitter"/>
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="llLoginPadding">24dp</dimen>
+    <dimen name="tvLoginMarginTop">24dp</dimen>
+    <dimen name="imgLoginWidth">40dp</dimen>
+    <dimen name="imgLoginHeight">40dp</dimen>
+    <dimen name="btSignInLoginWidth">200dp</dimen>
+    <dimen name="imgLoginMargin">12dp</dimen>
+    <dimen name="btSignInLoginHeight">40dp</dimen>
+    <dimen name="btSignInLoginMarginTop">10dp</dimen>
+    <dimen name="letter_icon_size">32dp</dimen>
+    <dimen name="llLoginActivityPadding">24dp</dimen>
+    <dimen name="materialLetterIconSieze">48dp</dimen>
+    <dimen name="MaterialLetterIconMarginLeft">16dp</dimen>
+    <dimen name="llEvento_ItemPadding">8dp</dimen>
+    <dimen name="tvTituloMarginLeft">8dp</dimen>
+    <dimen name="tvTituloMarginTop">8dp</dimen>
+</resources>
