@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.github.ivbaranov.mli.MaterialLetterIcon
+        android:id="@+id/mliUsuario"
+        android:layout_height="@dimen/materialLetterIconSieze"
+        android:layout_width="@dimen/materialLetterIconSieze"
+        app:mli_shape_type="circle"
+        app:mli_initials_number="1"
+        app:mli_shape_color="@color/secondaryColor"
+        app:mli_letter_color="@color/primaryTextColor"
+        app:mli_letter="S"
+        android:layout_marginLeft="@dimen/MaterialLetterIconMarginLeft"
+        >
+
+    </com.github.ivbaranov.mli.MaterialLetterIcon>
+
+    <TextView
+        android:id="@+id/tvUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginLeft="@dimen/tvTituloMarginLeft"
+        android:layout_marginTop="@dimen/tvTituloMarginTop"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        tools:text="Usuario"
+        />
+
+</LinearLayout>

@@ -9,7 +9,8 @@ import java.util.List;
 
 public class EventoRepository {
 
-    List<Evento> eventos = new ArrayList<Evento>();
+    List<Evento> eventos;
+
     private static EventoRepository eventoRepository;
 
     //Bloque estático para inicializar la única instanica de la clase
@@ -44,5 +45,8 @@ public class EventoRepository {
 
     public static EventoRepository getInstance(){
         return eventoRepository;
+    }
+
+    public void annadirEventoSuscrito() {
     }
 }

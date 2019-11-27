@@ -19,6 +19,7 @@ import java.util.List;
 public class EventoAdapter extends RecyclerView.Adapter<EventoAdapter.ViewHolder> {
 
     List<Evento> eventos;
+    OnUserClickListenner userClickListenner;
 
     public EventoAdapter(){
         this.eventos = (ArrayList) EventoRepository.getInstance().getList();
@@ -37,6 +38,10 @@ public class EventoAdapter extends RecyclerView.Adapter<EventoAdapter.ViewHolder
 
         holder.tvTitulo.setText(eventos.get(position).getTitulo());
         holder.mliEvento.setLetter(eventos.get(position).getTitulo());
+
+        if (holder != null)
+            holder.bindUserClickListenner(userClickListenner, position);
+
     }
 
     @Override
@@ -55,5 +60,25 @@ public class EventoAdapter extends RecyclerView.Adapter<EventoAdapter.ViewHolder
             tvTitulo = itemView.findViewById(R.id.tvTitulo);
             mliEvento = itemView.findViewById(R.id.mliEvento);
         }
+
+        public void bindUserClickListenner(final OnUserClickListenner userClickListenner, final int position) {
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    userClickListenner.onUserClick(eventos.get(position));
+                }
+            });
+        }
     }
+
+
+
+    public interface OnUserClickListenner{
+        void onUserClick(Evento evento);
+    }
+
+    public void setOnUserCliclListenner(OnUserClickListenner userClickListenner){
+        this.userClickListenner = userClickListenner;
+    }
+
 }

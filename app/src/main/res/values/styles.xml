@@ -8,10 +8,16 @@
         <item name="colorAccent">@color/secondaryColor</item>
     </style>
 
+<style name="ToolBarColor" parent="AppTheme">
+    <item name="colorPrimary">@color/primaryTextColor</item>
+    <item name="colorPrimaryDark">@color/primaryColor</item>
+</style>
+
+
+
     <style name="SplashTheme" parent="AppTheme">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <item name="android:windowBackground"></item>
     </style>
 
     <style name="LocalTheme" parent="Theme.AppCompat.Light.DarkActionBar">

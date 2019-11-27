@@ -15,4 +15,6 @@
     <dimen name="llEvento_ItemPadding">8dp</dimen>
     <dimen name="tvTituloMarginLeft">8dp</dimen>
     <dimen name="tvTituloMarginTop">8dp</dimen>
+    <dimen name="MisEventosLinearLayout">16dp</dimen>
+    <dimen name="textViewSuscripcionLayoutMargin">8dp</dimen>
 </resources>
