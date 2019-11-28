@@ -8,15 +8,18 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/ToolBarColor"
-        >
-        <activity android:name=".iu.Evento.EventoSeleccionadoActivity"></activity>
+        android:theme="@style/ToolBarColor">
+        <activity android:name=".iu.Evento.ChatActivity"></activity>
+        <activity android:name=".iu.Evento.EditarEventoCreadoActivity" />
+        <activity android:name=".iu.Evento.CrearEventoActivity" />
+        <activity android:name=".iu.Evento.EventoSeleccionadoActivity" />
         <activity android:name=".iu.DashBoardActivity" />
         <activity android:name=".iu.SignUpActivity" />
         <activity
             android:name=".iu.LoginActivity"
             android:launchMode="singleTop" />
-        <activity android:name=".iu.SplashActivity"
+        <activity
+            android:name=".iu.SplashActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

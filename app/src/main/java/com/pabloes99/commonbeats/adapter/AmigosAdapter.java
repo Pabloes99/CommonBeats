@@ -18,9 +18,18 @@ import java.util.List;
 public class AmigosAdapter extends RecyclerView.Adapter<AmigosAdapter.ViewHolder> {
 
     List<Usuario> amigos;
+    OnClickAmigo onClickAmigo;
 
     public AmigosAdapter(){
         amigos = UsuarioRepositorio.getInstance().getListaAmigos();
+    }
+
+    public interface OnClickAmigo{
+        void onCliclAmigo(Usuario usuario);
+    }
+
+    public void setOnCliclAmigo(OnClickAmigo onCliclAmigo){
+        this.onClickAmigo = onCliclAmigo;
     }
 
     @NonNull
@@ -39,6 +48,11 @@ public class AmigosAdapter extends RecyclerView.Adapter<AmigosAdapter.ViewHolder
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.tvUsuario.setText(amigos.get(position).getUsuario());
         holder.mliUsuario.setLetter(amigos.get(position).getUsuario());
+
+        if (holder != null)
+        {
+            holder.bindCliclAmigo(onClickAmigo,position);
+        }
     }
 
     class ViewHolder extends RecyclerView.ViewHolder{
@@ -50,6 +64,15 @@ public class AmigosAdapter extends RecyclerView.Adapter<AmigosAdapter.ViewHolder
             super(itemView);
             tvUsuario = itemView.findViewById(R.id.tvUsuario);
             mliUsuario = itemView.findViewById(R.id.mliUsuario);
+        }
+
+        public void bindCliclAmigo(final OnClickAmigo onClickAmigo, final int position) {
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onClickAmigo.onCliclAmigo(amigos.get(position));
+                }
+            });
         }
     }
 }

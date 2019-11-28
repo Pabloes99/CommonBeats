@@ -7,11 +7,14 @@ import android.os.Parcelable;
 import androidx.annotation.NonNull;
 
 import java.util.Date;
+import java.util.Objects;
 
 
 public class Evento implements Parcelable {
 
     public static final String KEY = "EVENTO";
+
+
 
     //Campos
     private static int idUnico = 1;
@@ -22,6 +25,8 @@ public class Evento implements Parcelable {
     private String hora;
     private String localizacion;
     private String descripcion;
+
+    public Evento(){}
 
     //Constructores
     public Evento(String titulo, Estilo estilo, String fecha, String hora, String localizacion, String descripcion) {
@@ -129,5 +134,13 @@ public class Evento implements Parcelable {
         dest.writeString(hora);
         dest.writeString(localizacion);
         dest.writeString(descripcion);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Evento)) return false;
+        Evento evento = (Evento) o;
+        return idEvento == evento.idEvento;
     }
 }

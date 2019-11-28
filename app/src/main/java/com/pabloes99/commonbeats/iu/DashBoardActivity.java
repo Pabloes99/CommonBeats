@@ -27,6 +27,7 @@ public class DashBoardActivity extends AppCompatActivity {
         tblEventos.addTab(tblEventos.newTab().setText("Eventos"));
         tblEventos.addTab(tblEventos.newTab().setText("Mis Eventos"));
         tblEventos.addTab(tblEventos.newTab().setText("Amigos"));
+        tblEventos.addTab(tblEventos.newTab().setText("Publicaciones"));
         tblEventos.setTabGravity(TabLayout.GRAVITY_FILL);
 
         viewPageAdapter = new ViewPageAdapter(getSupportFragmentManager(), tblEventos.getTabCount());

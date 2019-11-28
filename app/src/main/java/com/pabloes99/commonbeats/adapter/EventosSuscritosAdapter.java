@@ -52,7 +52,7 @@ public class EventosSuscritosAdapter extends RecyclerView.Adapter<EventosSuscrit
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            tvTitulo = itemView.findViewById(R.id.tvTitulo);
+            tvTitulo = itemView.findViewById(R.id.tvTituloEvento);
             mliEvento = itemView.findViewById(R.id.mliEvento);
         }
     }

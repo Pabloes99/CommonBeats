@@ -26,6 +26,7 @@ public class EventoRepository {
     private void inicializarListaEventos() {
         eventos = new ArrayList<Evento>();
 
+        /*
         eventos.add(new Evento("Actuación callejera", Estilo.Pop, "30/11/2019" , "20:00","Plaza El Romeral", "Actuación amateur de música pop"));
         eventos.add(new Evento("Batalla de gallos", Estilo.HipHop, "30/11/2019" , "20:00","Plaza El Romeral", "Actuación amateur de música pop"));
         eventos.add(new Evento("Concierto clásico", Estilo.Clasica, "30/11/2019" , "20:00","Plaza El Romeral", "Actuación amateur de música pop"));
@@ -35,6 +36,8 @@ public class EventoRepository {
         eventos.add(new Evento("Actuación pública", Estilo.Pop, "30/11/2019" , "20:00","Plaza El Romeral", "Actuación amateur de música pop"));
         eventos.add(new Evento("Quedada Rockera", Estilo.Rock, "30/11/2019" , "20:00","Plaza El Romeral", "Actuación amateur de música pop"));
         eventos.add(new Evento("Actuación pública", Estilo.Pop, "30/11/2019" , "20:00","Plaza El Romeral", "Actuación amateur de música pop"));
+        */
+
     }
 
 
@@ -47,6 +50,14 @@ public class EventoRepository {
         return eventoRepository;
     }
 
-    public void annadirEventoSuscrito() {
+    public void annadirEventoCreados(Evento evento) {
+        eventos.add(evento);
+    }
+
+    public void actualizarLista(Evento evento) {
+
+        int posicion = eventos.indexOf(evento);
+        eventos.remove(posicion);
+        eventos.add(posicion, evento);
     }
 }

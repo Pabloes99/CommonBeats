@@ -25,6 +25,16 @@ public class EventoAdapter extends RecyclerView.Adapter<EventoAdapter.ViewHolder
         this.eventos = (ArrayList) EventoRepository.getInstance().getList();
     }
 
+    public interface OnUserClickListenner{
+        void onUserClick(Evento evento);
+    }
+
+    public void setOnUserCliclListenner(OnUserClickListenner userClickListenner){
+        this.userClickListenner = userClickListenner;
+    }
+
+
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -57,7 +67,7 @@ public class EventoAdapter extends RecyclerView.Adapter<EventoAdapter.ViewHolder
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            tvTitulo = itemView.findViewById(R.id.tvTitulo);
+            tvTitulo = itemView.findViewById(R.id.tvTituloEvento);
             mliEvento = itemView.findViewById(R.id.mliEvento);
         }
 
@@ -70,15 +80,4 @@ public class EventoAdapter extends RecyclerView.Adapter<EventoAdapter.ViewHolder
             });
         }
     }
-
-
-
-    public interface OnUserClickListenner{
-        void onUserClick(Evento evento);
-    }
-
-    public void setOnUserCliclListenner(OnUserClickListenner userClickListenner){
-        this.userClickListenner = userClickListenner;
-    }
-
 }

@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 import com.pabloes99.commonbeats.iu.Evento.AmigosFragment;
 import com.pabloes99.commonbeats.iu.Evento.EventosFragment;
 import com.pabloes99.commonbeats.iu.Evento.MisEventosFragment;
+import com.pabloes99.commonbeats.iu.Evento.PublicacionFragment;
 
 public class ViewPageAdapter extends FragmentStatePagerAdapter {
 
@@ -28,6 +29,8 @@ public class ViewPageAdapter extends FragmentStatePagerAdapter {
                 return new MisEventosFragment();
             case 2:
                 return new AmigosFragment();
+            case 3:
+                return  new PublicacionFragment();
             default:
                 return null;
         }
