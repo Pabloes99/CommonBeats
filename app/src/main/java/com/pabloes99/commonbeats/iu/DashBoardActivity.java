@@ -1,13 +1,20 @@
 package com.pabloes99.commonbeats.iu;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 
 import com.google.android.material.tabs.TabLayout;
 import com.pabloes99.commonbeats.R;
 import com.pabloes99.commonbeats.adapter.ViewPageAdapter;
+import com.pabloes99.commonbeats.iu.Evento.AcercaDeNosotrosActivity;
+import com.pabloes99.commonbeats.iu.Perfil.PerfilActivity;
 
 public class DashBoardActivity extends AppCompatActivity {
 
@@ -15,6 +22,37 @@ public class DashBoardActivity extends AppCompatActivity {
     private ViewPager viewPager;
     private ViewPageAdapter viewPageAdapter;
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.acercaDeNosotros:
+                lanzarActividadAcercaDeNosotros();
+                return true;
+            case R.id.perfil:
+                lanzarActividadPerfil();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private void lanzarActividadPerfil() {
+        Intent intent = new Intent(DashBoardActivity.this, PerfilActivity.class);
+        startActivity(intent);
+    }
+
+    private void lanzarActividadAcercaDeNosotros() {
+        Intent intent = new Intent(DashBoardActivity.this, AcercaDeNosotrosActivity.class);
+        startActivity(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +78,7 @@ public class DashBoardActivity extends AppCompatActivity {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
 
-                viewPager.setCurrentItem( tab.getPosition());
+                viewPager.setCurrentItem(tab.getPosition());
             }
 
             @Override

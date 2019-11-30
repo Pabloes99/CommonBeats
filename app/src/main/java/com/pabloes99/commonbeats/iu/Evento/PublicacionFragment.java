@@ -1,6 +1,7 @@
 package com.pabloes99.commonbeats.iu.Evento;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.pabloes99.commonbeats.R;
 import com.pabloes99.commonbeats.adapter.PublicacionAdapter;
 
@@ -23,6 +25,7 @@ public class PublicacionFragment extends Fragment {
 
     private RecyclerView rvPublicacion;
     PublicacionAdapter publicacionAdapter;
+    private FloatingActionButton fabAnnadirPublicacion;
 
     public PublicacionFragment() {
         // Required empty public constructor
@@ -41,6 +44,7 @@ public class PublicacionFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        fabAnnadirPublicacion = view.findViewById(R.id.fabAnnadirPublicacion);
         rvPublicacion = view.findViewById(R.id.rvPublicacion);
         rvPublicacion.setHasFixedSize(true);
 
@@ -49,5 +53,14 @@ public class PublicacionFragment extends Fragment {
 
         rvPublicacion.setLayoutManager(linearLayoutManager);
         rvPublicacion.setAdapter(publicacionAdapter);
+
+
+        fabAnnadirPublicacion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(),CrearPublicacionActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

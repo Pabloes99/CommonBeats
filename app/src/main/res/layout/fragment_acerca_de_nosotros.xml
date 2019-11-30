@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@android:id/content"
+    android:padding="16dp"
+    tools:context=".iu.Evento.AcercaDeNosotrosFragment">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:text="La historia de Roma es la historia de la ciudad como entidad urbana y la historia de los estados e instituciones de los cuales ha sido capital o sede a lo largo del tiempo. Se puede dividir en prehistoria, Roma Antigua, Roma Medieval, Roma Moderna y Contemporánea; o bien en Roma Antigua, Roma Pontificia y Roma italiana contemporánea." />
+
+</FrameLayout>

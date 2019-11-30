@@ -6,12 +6,15 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Spinner;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.pabloes99.commonbeats.R;
@@ -23,13 +26,8 @@ import com.pabloes99.commonbeats.model.pojo.Evento;
 public class DescripcionEventoSuscritoFragment extends Fragment {
 
     Evento evento;
-    private TextInputLayout tilTituloDescripcionEventoSuscrito;
     private Spinner spDescripcionEventoSuscrito;
-    private TextInputLayout tilFechaDescripcionEventoSuscrito;
-    private TextInputLayout tilHoraDescripcionEventoSuscrito;
-    private TextInputLayout tilLocalizacionDescripcionEventoSuscrito;
-    private TextInputLayout tilDescripcionDescripcionEventoSuscrito;
-
+    private FloatingActionButton fabChatEvento;
     private TextInputEditText tidTituloDescripcionEventoSuscrito;
     private TextInputEditText tidFechaDescripcionEventoSuscrito;
     private TextInputEditText tidHoraDescripcionEventoSuscrito;
@@ -55,19 +53,14 @@ public class DescripcionEventoSuscritoFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        tilTituloDescripcionEventoSuscrito = view.findViewById(R.id.tilTituloDescripcionEventoSuscrito);
         spDescripcionEventoSuscrito = view.findViewById(R.id.spEstiloDescripcionEventoSuscrito);
-        tilFechaDescripcionEventoSuscrito = view.findViewById(R.id.tilFechaDescripcionEventoSuscrito);
-        tilHoraDescripcionEventoSuscrito = view.findViewById(R.id.tilHoraDescripcionEventoSuscrito);
-        tilLocalizacionDescripcionEventoSuscrito = view.findViewById(R.id.tilLocalizacionDescripcionEventoSuscrito);
-        tilDescripcionDescripcionEventoSuscrito = view.findViewById(R.id.tilDescripcionDescripcionEventoSuscrito);
-
         tidTituloDescripcionEventoSuscrito = view.findViewById(R.id.tidTituloDescripcionEventoSuscrito);
         spDescripcionEventoSuscrito = view.findViewById(R.id.spEstiloDescripcionEventoSuscrito);
         tidFechaDescripcionEventoSuscrito = view.findViewById(R.id.tidFechaDescripcionEventoSuscrito);
         tidHoraDescripcionEventoSuscrito = view.findViewById(R.id.tidHoraDescripcionEventoSuscrito);
         tidLocalizacionDescripcionEventoSuscrito = view.findViewById(R.id.tidLocalizacionDescripcionEventoSuscrito);
         tidDescripcionDescripcionEventoSuscrito = view.findViewById(R.id.tidDescripcionDescripcionEventoSuscrito);
+        fabChatEvento = view.findViewById(R.id.fabChatEvento);
 
         Bundle bundle = getArguments();
 
@@ -84,8 +77,29 @@ public class DescripcionEventoSuscritoFragment extends Fragment {
 
         }
 
+        fabChatEvento.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cargarChatEventoFragment();
+            }
+        });
+
     }
 
+    private void cargarChatEventoFragment() {
+
+        FragmentManager fragmentManager = getFragmentManager();
+
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        ChatFragment chatFragment = ChatFragment.crearNuevaInstancia(null);
+
+        fragmentTransaction.replace(android.R.id.content, chatFragment, ChatFragment.TAG);
+
+        fragmentTransaction.addToBackStack(null);
+
+        fragmentTransaction.commit();
+    }
 
 
     public static DescripcionEventoSuscritoFragment crearNeuvaInstancia(Bundle bundle){
