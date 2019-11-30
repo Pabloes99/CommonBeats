@@ -19,6 +19,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.pabloes99.commonbeats.R;
+import com.pabloes99.commonbeats.adapter.EventosSuscritosAdapter;
 import com.pabloes99.commonbeats.model.Repository.EventoRepository;
 import com.pabloes99.commonbeats.model.Repository.EventosSuscritosRepository;
 import com.pabloes99.commonbeats.model.pojo.Evento;
@@ -30,6 +31,7 @@ public class EventoSeleccionadoFragment extends Fragment {
 
     public static final String TAG = "EventoSeleccionadoFragment";
     Evento evento;
+    static EventosSuscritosAdapter eventosSuscritosAdapter;
     private TextInputLayout tilTitulo;
     private Spinner spEstilo;
     private TextInputLayout tilFecha;
@@ -46,6 +48,10 @@ public class EventoSeleccionadoFragment extends Fragment {
 
     public EventoSeleccionadoFragment() {
 
+    }
+
+    public static void pasarEventosSuscritosAdapter(EventosSuscritosAdapter eventosSuscritosAdapterD){
+        eventosSuscritosAdapter = eventosSuscritosAdapterD;
     }
 
 
@@ -84,6 +90,8 @@ public class EventoSeleccionadoFragment extends Fragment {
             public void onClick(View v) {
                 Toast.makeText(getContext(), "Se ejecuta", Toast.LENGTH_SHORT).show();
                 EventosSuscritosRepository.getInstance().annadirEventoSuscrito(evento);
+                eventosSuscritosAdapter.notifyDataSetChanged();
+                getActivity().onBackPressed();
             }
         });
     }

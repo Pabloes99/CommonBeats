@@ -40,6 +40,13 @@ public class EventosCreadosRepository {
         int posicion = eventosCreados.indexOf(evento);
         eventosCreados.remove(posicion);
         eventosCreados.add(posicion, evento);
+
         EventoRepository.getInstance().actualizarLista(evento);
+
+        List<Evento> suscritos = EventosSuscritosRepository.getInstance().getListEventosSuscritos();
+
+        if (suscritos.contains(evento)) {
+            EventosSuscritosRepository.getInstance().actualizarListas(evento);
+        }
     }
 }

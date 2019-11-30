@@ -17,11 +17,19 @@ import java.util.List;
 
 public class EventosSuscritosAdapter extends RecyclerView.Adapter<EventosSuscritosAdapter.ViewHolder> {
 
-
+    OnClickEventoSuscritoListener onClickEventoSuscritoListener;
     List<Evento> eventosSuscritos;
 
     public EventosSuscritosAdapter(){
         eventosSuscritos = EventosSuscritosRepository.getInstance().getListEventosSuscritos();
+    }
+
+    public interface OnClickEventoSuscritoListener{
+        void onClickEventoSuscrito(Evento evento);
+    }
+
+    public void setOnClickEventoSuscritoListener(OnClickEventoSuscritoListener onClickEventoSuscritoListener){
+        this.onClickEventoSuscritoListener = onClickEventoSuscritoListener;
     }
 
     @NonNull
@@ -36,6 +44,10 @@ public class EventosSuscritosAdapter extends RecyclerView.Adapter<EventosSuscrit
 
         holder.tvTitulo.setText(eventosSuscritos.get(position).getTitulo());
         holder.mliEvento.setLetter(eventosSuscritos.get(position).getTitulo());
+
+        if(holder != null){
+            holder.bindClickDescripcionEventoSuscrito(onClickEventoSuscritoListener, position);
+        }
     }
 
     @Override
@@ -54,6 +66,16 @@ public class EventosSuscritosAdapter extends RecyclerView.Adapter<EventosSuscrit
 
             tvTitulo = itemView.findViewById(R.id.tvTituloEvento);
             mliEvento = itemView.findViewById(R.id.mliEvento);
+        }
+
+        public void bindClickDescripcionEventoSuscrito(final OnClickEventoSuscritoListener onClickEventoSuscritoListener, final int position)
+        {
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onClickEventoSuscritoListener.onClickEventoSuscrito(eventosSuscritos.get(position));
+                }
+            });
         }
     }
 }

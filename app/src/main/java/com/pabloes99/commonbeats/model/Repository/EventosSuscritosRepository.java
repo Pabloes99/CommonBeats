@@ -7,7 +7,7 @@ import java.util.List;
 
 public class EventosSuscritosRepository {
 
-    List<Evento> eventosSuscritos;
+    private List<Evento> eventosSuscritos;
     public static EventosSuscritosRepository eventosSuscritosRepository;
 
     static{
@@ -36,4 +36,9 @@ public class EventosSuscritosRepository {
     }
 
 
+    public void actualizarListas(Evento evento) {
+        int posicion = eventosSuscritos.indexOf(evento);
+        eventosSuscritos.remove(posicion);
+        eventosSuscritos.add(posicion, evento);
+    }
 }

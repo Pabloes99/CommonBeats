@@ -17,6 +17,9 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.pabloes99.commonbeats.R;
+import com.pabloes99.commonbeats.adapter.EventoAdapter;
+import com.pabloes99.commonbeats.adapter.EventosCreadosAdapter;
+import com.pabloes99.commonbeats.adapter.EventosSuscritosAdapter;
 import com.pabloes99.commonbeats.model.Repository.EventosCreadosRepository;
 import com.pabloes99.commonbeats.model.pojo.Evento;
 
@@ -24,6 +27,10 @@ import com.pabloes99.commonbeats.model.pojo.Evento;
  * A simple {@link Fragment} subclass.
  */
 public class EditarEventoCreadoFragment extends Fragment {
+
+    static EventoAdapter eventoAdapter;
+    static EventosCreadosAdapter eventosCreadosAdapter;
+    static EventosSuscritosAdapter eventosSuscritosAdapter;
 
     Evento evento;
     private TextInputLayout tilTituloEditarEventoCreado;
@@ -41,6 +48,18 @@ public class EditarEventoCreadoFragment extends Fragment {
     private FloatingActionButton fabEditarEventoCreado;
 
     public static final String TAG = "EditarEventoCreado";
+
+    public static void pasarEventoAdapterEditar(EventoAdapter eventoAdapterD) {
+        eventoAdapter = eventoAdapterD;
+    }
+
+    public static void pasarEventosCreadosAdapterEditar(EventosCreadosAdapter eventosCreadosAdapterD) {
+        eventosCreadosAdapter = eventosCreadosAdapterD;
+    }
+
+    public static void pasarEventosSuscritosAdapterEditar(EventosSuscritosAdapter eventosSuscritosAdapterD) {
+        eventosSuscritosAdapter = eventosSuscritosAdapterD;
+    }
 
     public EditarEventoCreadoFragment() {
         // Required empty public constructor
@@ -99,6 +118,10 @@ public class EditarEventoCreadoFragment extends Fragment {
                 //Obtengo los nuevos datos del evento en un  nuevo evento y añado este nuevo evento
                 obtenerEventoEditado();
                 EventosCreadosRepository.getInstancia().editarEvento(evento);
+                eventoAdapter.notifyDataSetChanged();
+                eventosCreadosAdapter.notifyDataSetChanged();
+                eventosSuscritosAdapter.notifyDataSetChanged();
+                getActivity().onBackPressed();
             }
         });
     }

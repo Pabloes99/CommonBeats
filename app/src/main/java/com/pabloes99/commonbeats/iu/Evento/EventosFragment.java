@@ -59,6 +59,9 @@ public class EventosFragment extends Fragment {
 
         inicializarUserClickListenner();
         eventoAdapter.setOnUserCliclListenner(userClickListenner);
+
+        CrearEventoFragment.pasarEventoAdapter(eventoAdapter);
+        EditarEventoCreadoFragment.pasarEventoAdapterEditar(eventoAdapter);
     }
 
     private void inicializarUserClickListenner() {

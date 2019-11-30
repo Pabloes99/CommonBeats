@@ -19,6 +19,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.pabloes99.commonbeats.R;
+import com.pabloes99.commonbeats.adapter.EventoAdapter;
 import com.pabloes99.commonbeats.adapter.EventosCreadosAdapter;
 import com.pabloes99.commonbeats.model.Repository.EventoRepository;
 import com.pabloes99.commonbeats.model.Repository.EventosCreadosRepository;
@@ -31,7 +32,8 @@ import com.pabloes99.commonbeats.model.pojo.Evento;
 public class CrearEventoFragment extends Fragment {
 
     public static final String TAG = "CrearEventoFragment";
-
+    static EventosCreadosAdapter eventosCreadosAdapter;
+    static EventoAdapter eventoAdapter;
     Evento evento;
     private TextInputLayout tilTituloCrearEvento;
     private Spinner spEstiloCrearEvento;
@@ -49,6 +51,13 @@ public class CrearEventoFragment extends Fragment {
 
     public CrearEventoFragment() {
         // Required empty public constructor
+    }
+
+    public static void pasarCrearEventoAdapter(EventosCreadosAdapter eventosCreadosAdapterD){
+        eventosCreadosAdapter = eventosCreadosAdapterD;
+    }
+    public static void pasarEventoAdapter(EventoAdapter eventoAdapterD){
+        eventoAdapter = eventoAdapterD;
     }
 
 
@@ -90,6 +99,9 @@ public class CrearEventoFragment extends Fragment {
                 inicializarEvento();
                 EventosCreadosRepository.getInstancia().annadirNuevoEvento(evento);
                 EventoRepository.getInstance().annadirEventoCreados(evento);
+                eventosCreadosAdapter.notifyDataSetChanged();
+                eventoAdapter.notifyDataSetChanged();
+                getActivity().onBackPressed();
             }
         });
     }

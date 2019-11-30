@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/ToolBarColor">
-        <activity android:name=".iu.Evento.ChatActivity"></activity>
+        <activity android:name=".iu.Evento.DescripcionEventoSuscritoActivity"></activity>
+        <activity android:name=".iu.Evento.ChatActivity" />
         <activity android:name=".iu.Evento.EditarEventoCreadoActivity" />
         <activity android:name=".iu.Evento.CrearEventoActivity" />
         <activity android:name=".iu.Evento.EventoSeleccionadoActivity" />

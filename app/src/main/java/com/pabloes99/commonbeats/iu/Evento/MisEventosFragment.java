@@ -32,6 +32,7 @@ public class MisEventosFragment extends Fragment{
     private EventosCreadosAdapter eventosCreadosAdapter;
     private FloatingActionButton fabCrearEvento;
     private EventosCreadosAdapter.OnClickEventoCreadoListener onClickEventoCreadoListener;
+    private EventosSuscritosAdapter.OnClickEventoSuscritoListener onClickEventoSuscritoListener;
 
 
     public MisEventosFragment() {
@@ -74,7 +75,32 @@ public class MisEventosFragment extends Fragment{
 
         rvEventosSuscritos.setLayoutManager(linearLayoutManager);
         rvEventosSuscritos.setAdapter(eventosSuscritosAdapter);
+
+        inicializarOnClickDescripcionEventosSuscritosListener();
+        eventosSuscritosAdapter.setOnClickEventoSuscritoListener(onClickEventoSuscritoListener);
+
+        EventoSeleccionadoFragment.pasarEventosSuscritosAdapter(eventosSuscritosAdapter);
+        EditarEventoCreadoFragment.pasarEventosSuscritosAdapterEditar(eventosSuscritosAdapter);
     }
+
+    private void inicializarOnClickDescripcionEventosSuscritosListener() {
+        onClickEventoSuscritoListener = new EventosSuscritosAdapter.OnClickEventoSuscritoListener() {
+            @Override
+            public void onClickEventoSuscrito(Evento evento) {
+                lanzarIntentDescripcionEvnetoSuscrito(evento);
+            }
+        };
+    }
+
+    private void lanzarIntentDescripcionEvnetoSuscrito(Evento evento) {
+
+        Intent intent = new Intent(getContext(), DescripcionEventoSuscritoActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putParcelable(Evento.KEY, evento);
+        intent.putExtras(bundle);
+        startActivity(intent);
+    }
+
 
     private void inicializarRvEventosCreados() {
 
@@ -89,6 +115,10 @@ public class MisEventosFragment extends Fragment{
 
         inicializarOnClickEventosCreadosListener();
         eventosCreadosAdapter.setOnClickEventoCreadoListener(onClickEventoCreadoListener);
+
+        CrearEventoFragment.pasarCrearEventoAdapter(eventosCreadosAdapter);
+        EditarEventoCreadoFragment.pasarEventosCreadosAdapterEditar(eventosCreadosAdapter);
+
     }
 
     private void inicializarOnClickEventosCreadosListener() {
@@ -97,6 +127,7 @@ public class MisEventosFragment extends Fragment{
             public void onClickEventoCreado(Evento evento) {
                 //Llamo al intent
                 lanzarIntentEditarEventoCreado(evento);
+
                 Toast.makeText(getContext(), "Funciona", Toast.LENGTH_LONG).show();
             }
         };
