@@ -136,8 +136,11 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_weight="1"
+            android:tint="@color/secondaryDarkColor"
+            android:elevation="5dp"
             android:clickable="true"
-            android:src="@android:drawable/ic_menu_add" />
+            android:layout_margin="8dp"
+            android:src="@android:drawable/ic_menu_edit" />
     </com.google.android.material.textfield.TextInputLayout>
 
 

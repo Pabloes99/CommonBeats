@@ -21,10 +21,12 @@ import com.pabloes99.commonbeats.R;
 import com.pabloes99.commonbeats.adapter.EventoAdapter;
 import com.pabloes99.commonbeats.adapter.EventosCreadosAdapter;
 import com.pabloes99.commonbeats.adapter.EventosSuscritosAdapter;
+import com.pabloes99.commonbeats.iu.DashBoardActivity;
+import com.pabloes99.commonbeats.iu.SplashActivity;
 import com.pabloes99.commonbeats.model.Repository.EventosCreadosRepository;
 import com.pabloes99.commonbeats.model.pojo.Evento;
 
-public class MisEventosFragment extends Fragment{
+public class MisEventosFragment extends Fragment {
 
     private RecyclerView rvEventosSuscritos;
     private RecyclerView rvEventosCreados;
@@ -81,6 +83,7 @@ public class MisEventosFragment extends Fragment{
 
         EventoSeleccionadoFragment.pasarEventosSuscritosAdapter(eventosSuscritosAdapter);
         EditarEventoCreadoFragment.pasarEventosSuscritosAdapterEditar(eventosSuscritosAdapter);
+        DashBoardActivity.pasarEventosSuscritosAdapter(eventosSuscritosAdapter);
     }
 
     private void inicializarOnClickDescripcionEventosSuscritosListener() {
@@ -104,6 +107,7 @@ public class MisEventosFragment extends Fragment{
 
     private void inicializarRvEventosCreados() {
 
+
         rvEventosCreados.setHasFixedSize(true);
 
         eventosCreadosAdapter = new EventosCreadosAdapter();
@@ -113,11 +117,13 @@ public class MisEventosFragment extends Fragment{
         rvEventosCreados.setLayoutManager(linearLayoutManager);
         rvEventosCreados.setAdapter(eventosCreadosAdapter);
 
+
         inicializarOnClickEventosCreadosListener();
         eventosCreadosAdapter.setOnClickEventoCreadoListener(onClickEventoCreadoListener);
 
         CrearEventoFragment.pasarCrearEventoAdapter(eventosCreadosAdapter);
         EditarEventoCreadoFragment.pasarEventosCreadosAdapterEditar(eventosCreadosAdapter);
+        DashBoardActivity.pasarEventosCreadosAdapter(eventosCreadosAdapter);
 
     }
 
@@ -136,8 +142,8 @@ public class MisEventosFragment extends Fragment{
     private void lanzarIntentEditarEventoCreado(Evento evento) {
         Intent intent = new Intent(getContext(), EditarEventoCreadoActivity.class);
         Bundle bundle = new Bundle();
-        bundle.putParcelable(Evento.KEY,evento);
+        bundle.putParcelable(Evento.KEY, evento);
         intent.putExtras(bundle);
-        startActivity(intent,bundle);
+        startActivity(intent, bundle);
     }
 }

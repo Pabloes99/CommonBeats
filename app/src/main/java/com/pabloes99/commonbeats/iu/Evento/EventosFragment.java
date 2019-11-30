@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.pabloes99.commonbeats.R;
 import com.pabloes99.commonbeats.adapter.EventoAdapter;
+import com.pabloes99.commonbeats.iu.DashBoardActivity;
 import com.pabloes99.commonbeats.model.pojo.Evento;
 
 /**
@@ -62,6 +63,7 @@ public class EventosFragment extends Fragment {
 
         CrearEventoFragment.pasarEventoAdapter(eventoAdapter);
         EditarEventoCreadoFragment.pasarEventoAdapterEditar(eventoAdapter);
+        DashBoardActivity.pasarEventoAdapter(eventoAdapter);
     }
 
     private void inicializarUserClickListenner() {

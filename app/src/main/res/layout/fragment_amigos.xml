@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:id="@android:id/content"
     android:layout_height="match_parent"
+    android:padding="16dp"
     tools:context=".iu.Evento.AmigosFragment" >
 
     <androidx.recyclerview.widget.RecyclerView
@@ -16,7 +17,10 @@
         android:id="@+id/fabChat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="8dp"
         android:layout_gravity="bottom|end"
+        android:tint="@color/secondaryDarkColor"
+        android:elevation="5dp"
         android:clickable="true"
-        android:src="@android:drawable/ic_menu_add" />
+        android:src="@android:drawable/ic_input_add" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

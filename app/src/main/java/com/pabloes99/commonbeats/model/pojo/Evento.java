@@ -6,6 +6,7 @@ import android.os.Parcelable;
 
 import androidx.annotation.NonNull;
 
+import java.util.Comparator;
 import java.util.Date;
 import java.util.Objects;
 
@@ -142,5 +143,27 @@ public class Evento implements Parcelable {
         if (!(o instanceof Evento)) return false;
         Evento evento = (Evento) o;
         return idEvento == evento.idEvento;
+    }
+
+    public static class FechaEventoComparator implements Comparator {
+
+        public int compare(Object o1, Object o2) {
+            Evento evento = (Evento)o1;
+            Evento evento2 = (Evento)o2;
+            return evento.getFecha().
+                    compareTo(evento2.getFecha());
+
+        }
+    }
+
+    public static class TituloEventoComparator implements Comparator {
+
+        public int compare(Object o1, Object o2) {
+            Evento evento = (Evento)o1;
+            Evento evento2 = (Evento)o2;
+            return evento.getTitulo().
+                    compareTo(evento2.getTitulo());
+
+        }
     }
 }

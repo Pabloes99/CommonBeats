@@ -12,6 +12,8 @@
         android:id="@+id/tvSuscripcion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:background="@drawable/selector_round_corner"
         android:layout_margin="@dimen/textViewSuscripcionLayoutMargin"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:text="@string/tvSuscripcionesText" />
@@ -26,6 +28,8 @@
         android:id="@+id/tvCreadoss"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:background="@drawable/selector_round_corner"
         android:layout_margin="@dimen/textViewSuscripcionLayoutMargin"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:text="@string/tvCreadosText" />
@@ -41,7 +45,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:elevation="5dp"
+        android:tint="@color/secondaryDarkColor"
         android:layout_gravity="end"
         android:clickable="true"
-        android:src="@android:drawable/ic_menu_add" />
+        android:layout_margin="8dp"
+        android:src="@android:drawable/ic_input_add" />
 </LinearLayout>

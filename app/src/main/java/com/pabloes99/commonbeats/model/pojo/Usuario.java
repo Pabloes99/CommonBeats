@@ -28,7 +28,7 @@ public class Usuario {
         this.nombre = nombre;
         this.apelldios = apellidos;
         this.fechaNacimiento = fechaNacimiento;
-        this.fechaCreacion = String.valueOf(new Date().getDate());
+        this.fechaCreacion = String.valueOf(new Date().getDate()) + "/" + String.valueOf(new Date().getMonth()) + "/" + String.valueOf( new Date().getDay());
         this.movil = movil;
 
     }

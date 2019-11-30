@@ -12,15 +12,27 @@ import android.view.MenuItem;
 
 import com.google.android.material.tabs.TabLayout;
 import com.pabloes99.commonbeats.R;
+import com.pabloes99.commonbeats.adapter.EventoAdapter;
+import com.pabloes99.commonbeats.adapter.EventosCreadosAdapter;
+import com.pabloes99.commonbeats.adapter.EventosSuscritosAdapter;
 import com.pabloes99.commonbeats.adapter.ViewPageAdapter;
 import com.pabloes99.commonbeats.iu.Evento.AcercaDeNosotrosActivity;
 import com.pabloes99.commonbeats.iu.Perfil.PerfilActivity;
+import com.pabloes99.commonbeats.model.Repository.EventoRepository;
+import com.pabloes99.commonbeats.model.Repository.EventosCreadosRepository;
+import com.pabloes99.commonbeats.model.Repository.EventosSuscritosRepository;
+import com.pabloes99.commonbeats.model.pojo.Evento;
+
+import java.util.Collections;
 
 public class DashBoardActivity extends AppCompatActivity {
 
     private TabLayout tblEventos;
     private ViewPager viewPager;
     private ViewPageAdapter viewPageAdapter;
+    private static EventoAdapter eventoAdapter;
+    private static EventosCreadosAdapter eventosCreadosAdapter;
+    private static EventosSuscritosAdapter eventosSuscritosAdapter;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -39,10 +51,39 @@ public class DashBoardActivity extends AppCompatActivity {
             case R.id.perfil:
                 lanzarActividadPerfil();
                 return true;
+            case R.id.ordenarPorTitulo:
+                Collections.sort(EventoRepository.getInstance().getList(),new Evento.TituloEventoComparator());
+                Collections.sort(EventosCreadosRepository.getInstancia().getListaEventosCreados(),new Evento.TituloEventoComparator());
+                Collections.sort(EventosSuscritosRepository.getInstance().getListEventosSuscritos(),new Evento.TituloEventoComparator());
+                eventoAdapter.notifyDataSetChanged();
+                eventosCreadosAdapter.notifyDataSetChanged();
+                eventosSuscritosAdapter.notifyDataSetChanged();
+                return true;
+            case R.id.ordenarPorFecha:
+                Collections.sort(EventoRepository.getInstance().getList(),new Evento.FechaEventoComparator());
+                Collections.sort(EventosCreadosRepository.getInstancia().getListaEventosCreados(),new Evento.FechaEventoComparator());
+                Collections.sort(EventosSuscritosRepository.getInstance().getListEventosSuscritos(),new Evento.FechaEventoComparator());
+                eventoAdapter.notifyDataSetChanged();
+                eventosCreadosAdapter.notifyDataSetChanged();
+                eventosSuscritosAdapter.notifyDataSetChanged();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
+
+    public static void pasarEventoAdapter(EventoAdapter eventoAdapterD){
+        eventoAdapter = eventoAdapterD;
+    }
+
+    public static void pasarEventosCreadosAdapter(EventosCreadosAdapter eventosCreadosAdapterD){
+        eventosCreadosAdapter = eventosCreadosAdapterD;
+    }
+
+    public static void pasarEventosSuscritosAdapter(EventosSuscritosAdapter eventosSuscritosAdapterD){
+        eventosSuscritosAdapter = eventosSuscritosAdapterD;
+    }
+
 
     private void lanzarActividadPerfil() {
         Intent intent = new Intent(DashBoardActivity.this, PerfilActivity.class);

@@ -7,4 +7,10 @@
     <item android:id="@+id/perfil"
         android:title="Perfil"
         app:showAsAction="never" />
+    <item android:id="@+id/ordenarPorTitulo"
+        android:title="Ordenar por título"
+        app:showAsAction="never" />
+    <item android:id="@+id/ordenarPorFecha"
+        android:title="Ordenar por fecha"
+        app:showAsAction="never" />
 </menu>

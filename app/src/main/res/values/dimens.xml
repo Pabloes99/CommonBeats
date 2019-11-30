@@ -7,7 +7,7 @@
     <dimen name="btSignInLoginWidth">200dp</dimen>
     <dimen name="imgLoginMargin">12dp</dimen>
     <dimen name="btSignInLoginHeight">40dp</dimen>
-    <dimen name="btSignInLoginMarginTop">10dp</dimen>
+    <dimen name="btSignInLoginMarginTop">24dp</dimen>
     <dimen name="letter_icon_size">32dp</dimen>
     <dimen name="llLoginActivityPadding">24dp</dimen>
     <dimen name="materialLetterIconSieze">48dp</dimen>

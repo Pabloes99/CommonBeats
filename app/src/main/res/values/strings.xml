@@ -1,20 +1,21 @@
 <resources>
     <string name="app_name">CommonBeats</string>
-    <string name="tvUser">User Name/e mail address</string>
-    <string name="tvPassword">Password</string>
-    <string name="chRemember">Remember me</string>
-    <string name="btSignUp">Sign Up</string>
-    <string name="btSignIn">Sign In</string>
+    <string name="tvUser">Usuario o email</string>
+    <string name="tvPassword">Contraseña</string>
+    <string name="chRemember">Guardar</string>
+    <string name="btnRecuperarContrasennaToast">Se ha enviado un email a tu dirección de correro electrónico con los pasos a seguir...</string>
+    <string name="btnResgistrarseConGoogleToast">Se ha registrado con su cuenta de Google...</string>
+    <string name="btSignUp">Registrarse</string>
+    <string name="btSignIn">Iniciar sesión</string>
     <string name="btGoogle">Google</string>
-    <string name="btFacebook">Facebook</string>
-    <string name="tvOtherSign">Or Signup with...</string>
-    <string name="tiedUserHint">User Name</string>
+    <string name="tvOtherSign">Registrarse con</string>
+    <string name="tiedUserHint">Usuario</string>
     <string name="tiedEmailHint">Email</string>
-    <string name="tiedPasswordHint">Password</string>
-    <string name="tiedPasswordRepeatHint">Repeat Password</string>
+    <string name="tiedPasswordHint">Contraseña</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
     <string name="tvSuscripcionesText">Suscripciones</string>
     <string name="tvCreadosText">Eventos Creados</string>
+    <string name="tvRecuperarContrasenna">Recuperar contraseña</string>
 </resources>

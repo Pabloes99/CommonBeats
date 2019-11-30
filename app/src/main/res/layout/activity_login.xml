@@ -57,22 +57,33 @@
             android:layout_weight="1"
             android:text="@string/btSignUp"
             style="@style/Widget.Button.Trannsparent"/>
+
+
+        <Button
+            android:id="@+id/btnRecuperarContrasenna"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_weight="1"
+            android:text="@string/tvRecuperarContrasenna"
+            style="@style/Widget.Button.Trannsparent"/>
     </LinearLayout>
+
 
     <Button
         android:id="@+id/btSignIn"
-        android:layout_marginTop="@dimen/btSignInLoginMarginTop"
         android:layout_width="@dimen/btSignInLoginWidth"
         android:layout_height="@dimen/btSignInLoginHeight"
         android:layout_gravity="center"
+        android:layout_marginTop="@dimen/btSignInLoginMarginTop"
+        android:background="@drawable/selector_round_corner"
         android:text="@string/btSignIn"
-        android:textColor="@android:color/white"
-        android:background="@drawable/selector_round_corner"/>
+        android:textColor="@android:color/white" />
 
     <Space
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"/>
+        android:layout_weight=".6"/>
 
     <TextView
         android:id="@+id/tvOtherSign"
@@ -88,18 +99,12 @@
         android:gravity="center_horizontal">
 
         <ImageButton
-            android:id="@+id/btGoogle"
+            android:id="@+id/ibtnRegistrarConGoogle"
             android:layout_margin="@dimen/imgLoginMargin"
             android:layout_width="@dimen/imgLoginWidth"
             android:layout_height="@dimen/imgLoginHeight"
             android:background="@drawable/ic_search"/>
 
-        <ImageButton
-            android:id="@+id/btTwitter"
-            android:layout_margin="@dimen/imgLoginMargin"
-            android:layout_width="@dimen/imgLoginWidth"
-            android:layout_height="@dimen/imgLoginHeight"
-            android:background="@drawable/ic_twitter"/>
     </LinearLayout>
 
 
