@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".iu.Evento.MisEventosFragment"
-    android:padding="@dimen/MisEventosLinearLayout">
+    android:padding="@dimen/paddingGlobalLayout">
 
     <TextView
         android:id="@+id/tvSuscripcion"

@@ -5,7 +5,7 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="@dimen/llEvento_ItemPadding">
+    android:padding="@dimen/paddingGlobalLayout">
 
     <com.github.ivbaranov.mli.MaterialLetterIcon
         android:id="@+id/mliEvento"

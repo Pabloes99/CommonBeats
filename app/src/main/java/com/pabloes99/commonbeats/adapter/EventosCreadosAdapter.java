@@ -10,8 +10,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.github.ivbaranov.mli.MaterialLetterIcon;
 import com.pabloes99.commonbeats.R;
-import com.pabloes99.commonbeats.model.Repository.EventosCreadosRepository;
-import com.pabloes99.commonbeats.model.pojo.Evento;
+import com.pabloes99.commonbeats.data.Repository.EventosCreadosRepository;
+import com.pabloes99.commonbeats.data.pojo.Evento;
 
 import java.util.List;
 

@@ -18,4 +18,38 @@
     <string name="tvSuscripcionesText">Suscripciones</string>
     <string name="tvCreadosText">Eventos Creados</string>
     <string name="tvRecuperarContrasenna">Recuperar contraseña</string>
+    <string name="logoAcercaDeNosotros">Logo</string>
+    <string name="VersionAcercaDeNosotros">Versión</string>
+    <string name="versionTVAcercaDeNosotros">Version 1.0 Alpha</string>
+    <string name="desarroladorAcercaDeNosotros">Desarollador</string>
+    <string name="desarrolladorTVAcercaDeNosotros">Pablo Estepa Estepa</string>
+    <string name="acerca_de_miAcercaDeNosotros">Acerca de mí</string>
+    <string name="emailAcercaDeNosotros">Contacta conmigo a través del email pabloes99@gmail.com</string>
+    <string name="acercaDeMiTVAcercaDeNosotros">Soy Pablo Estepa, un estudiante de programación, esta, es la primera aplicación seria que desarrolo, por ello, quize juntar dos de las cosas que más me gustan, la música y las relaciones sociales.</string>
+    <string name="tvTitulo">Título</string>
+    <string name="tvEstilo">Estilo</string>
+    <string name="tvFecha">Fecha</string>
+    <string name="tvHora">Hora</string>
+    <string name="tvLocalizacion">Localización</string>
+    <string name="tvDescripcion">Descripción</string>
+    <string name="tvTipoDePublicacion">Tipo de publicación</string>
+    <string name="tvTextollTexto">Texto</string>
+    <string name="tvImagenllImagen">Imagen</string>
+    <string name="tvVideollVideo">Video</string>
+    <string-array name="estilos">
+        <item>Rock</item>
+        <item>Pop</item>
+        <item>Clasica</item>
+        <item>Blues</item>
+        <item>Gospel</item>
+        <item>Soul</item>
+        <item>Metal</item>
+        <item>Country</item>
+        <item>Funk</item>
+        <item>Electronica</item>
+        <item>HipHop</item>
+        <item>Flamenco</item>
+        <item>Reggateon</item>
+        <item>Trap</item>
+    </string-array>
 </resources>

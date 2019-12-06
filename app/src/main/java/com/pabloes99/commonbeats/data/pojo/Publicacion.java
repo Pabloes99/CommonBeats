@@ -1,4 +1,4 @@
-package com.pabloes99.commonbeats.model.pojo;
+package com.pabloes99.commonbeats.data.pojo;
 
 import java.util.Date;
 

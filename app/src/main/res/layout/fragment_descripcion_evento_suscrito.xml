@@ -1,135 +1,216 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@android:id/content"
+    android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="8dp"
     android:orientation="vertical"
-    tools:context=".iu.Evento.DescripcionEventoSuscritoFragment">
+    android:padding="@dimen/paddingGlobalLayout"
+    tools:context=".iu.Evento.CrearEventoFragment">
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight=".45"
-        android:text="Título" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/tvTitulo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_conversion_absoluteHeight="24dp"
+        tools:layout_conversion_absoluteWidth="36dp" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilTituloDescripcionEventoSuscrito"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        tools:layout_conversion_absoluteHeight="54dp"
+        tools:layout_conversion_absoluteWidth="379dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tidTituloDescripcionEventoSuscrito"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:enabled="false" />
+            android:enabled="false"
+            tools:layout_conversion_absoluteHeight="43dp"
+            tools:layout_conversion_absoluteWidth="379dp"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="52dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight=".45"
-        android:text="Estilo" />
+        android:layout_width="37dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:text="@string/tvEstilo"
+        app:layout_constraintStart_toStartOf="@+id/tilTituloDescripcionEventoSuscrito"
+        app:layout_constraintTop_toTopOf="@+id/tilTituloDescripcionEventoSuscrito"
+        tools:layout_conversion_absoluteHeight="24dp"
+        tools:layout_conversion_absoluteWidth="35dp" />
 
     <Spinner
         android:id="@+id/spEstiloDescripcionEventoSuscrito"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_width="328dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:entries="@array/estilos"
+        android:clickable="false"
+        app:layout_constraintBottom_toBottomOf="@+id/textView3"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toTopOf="@+id/textView3"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_conversion_absoluteHeight="24dp"
+        tools:layout_conversion_absoluteWidth="379dp" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight=".45"
-        android:text="Fecha" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="@string/tvFecha"
+        app:layout_constraintStart_toStartOf="@+id/tilFechaDescripcionEventoSuscrito"
+        app:layout_constraintTop_toBottomOf="@+id/spEstiloDescripcionEventoSuscrito"
+        tools:layout_conversion_absoluteHeight="24dp"
+        tools:layout_conversion_absoluteWidth="39dp" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilFechaDescripcionEventoSuscrito"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        tools:layout_conversion_absoluteHeight="54dp"
+        tools:layout_conversion_absoluteWidth="379dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tidFechaDescripcionEventoSuscrito"
-            android:layout_width="match_parent"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:enabled="false" />
+            android:enabled="false"
+            tools:layout_conversion_absoluteHeight="43dp"
+            tools:layout_conversion_absoluteWidth="379dp"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="178dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight=".45"
-        android:text="Hora" />
+        android:layout_height="wrap_content"
+        android:layout_marginStart="140dp"
+        android:text="@string/tvHora"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toTopOf="@+id/textView4"
+        tools:layout_conversion_absoluteHeight="24dp"
+        tools:layout_conversion_absoluteWidth="31dp" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilHoraDescripcionEventoSuscrito"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        tools:layout_conversion_absoluteHeight="54dp"
+        tools:layout_conversion_absoluteWidth="379dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tidHoraDescripcionEventoSuscrito"
-            android:layout_width="match_parent"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:enabled="false" />
+            android:enabled="false"
+            tools:layout_conversion_absoluteHeight="43dp"
+            tools:layout_conversion_absoluteWidth="379dp"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="257dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight=".45"
-        android:text="Localización" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/tvLocalizacion"
+        app:layout_constraintStart_toStartOf="@+id/tilFechaDescripcionEventoSuscrito"
+        app:layout_constraintTop_toBottomOf="@+id/tilFechaDescripcionEventoSuscrito"
+        tools:layout_conversion_absoluteHeight="24dp"
+        tools:layout_conversion_absoluteWidth="80dp" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilLocalizacionDescripcionEventoSuscrito"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        tools:layout_conversion_absoluteHeight="54dp"
+        tools:layout_conversion_absoluteWidth="379dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tidLocalizacionDescripcionEventoSuscrito"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:enabled="false" />
+            tools:layout_conversion_absoluteHeight="43dp"
+            tools:layout_conversion_absoluteWidth="379dp"
+            android:enabled="false"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="336dp" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight=".45"
+        android:layout_height="wrap_content"
 
-        android:text="Descripción" />
+        android:layout_marginTop="64dp"
+        android:text="@string/tvDescripcion"
+        app:layout_constraintStart_toStartOf="@+id/tilLocalizacionDescripcionEventoSuscrito"
+        app:layout_constraintTop_toTopOf="@+id/tilLocalizacionDescripcionEventoSuscrito"
+        tools:layout_conversion_absoluteHeight="24dp"
+        tools:layout_conversion_absoluteWidth="75dp" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilDescripcionDescripcionEventoSuscrito"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        tools:layout_conversion_absoluteHeight="56dp"
+        tools:layout_conversion_absoluteWidth="379dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tidDescripcionDescripcionEventoSuscrito"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:enabled="false" />
+            tools:layout_conversion_absoluteHeight="45dp"
+            tools:layout_conversion_absoluteWidth="379dp"
+            tools:layout_editor_absoluteX="16dp"
+            android:enabled="false"
+            tools:layout_editor_absoluteY="415dp" />
+
+
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabChatEvento"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:clickable="true"
-        android:layout_margin="8dp"
+        android:src="@android:drawable/sym_action_chat"
         android:tint="@color/secondaryDarkColor"
-        android:elevation="5dp"
-        android:layout_gravity="end|bottom"
-        android:src="@android:drawable/stat_notify_chat" />
-</LinearLayout>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_conversion_absoluteHeight="56dp"
+        tools:layout_conversion_absoluteWidth="56dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

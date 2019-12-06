@@ -15,12 +15,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.pabloes99.commonbeats.R;
 import com.pabloes99.commonbeats.adapter.EventoAdapter;
-import com.pabloes99.commonbeats.iu.DashBoardActivity;
-import com.pabloes99.commonbeats.model.pojo.Evento;
+import com.pabloes99.commonbeats.iu.PanelActivity;
+import com.pabloes99.commonbeats.data.pojo.Evento;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -34,6 +33,12 @@ public class EventosFragment extends Fragment {
     private FragmentManager fragmentManager;
     private EventoSeleccionadoFragment eventoSeleccionadoFragment;
 
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setRetainInstance(true);
+    }
 
     @Nullable
     @Override
@@ -63,7 +68,7 @@ public class EventosFragment extends Fragment {
 
         CrearEventoFragment.pasarEventoAdapter(eventoAdapter);
         EditarEventoCreadoFragment.pasarEventoAdapterEditar(eventoAdapter);
-        DashBoardActivity.pasarEventoAdapter(eventoAdapter);
+        PanelActivity.pasarEventoAdapter(eventoAdapter);
     }
 
     private void inicializarUserClickListenner() {

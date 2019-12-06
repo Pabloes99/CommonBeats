@@ -16,9 +16,8 @@ import android.widget.Spinner;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
 import com.pabloes99.commonbeats.R;
-import com.pabloes99.commonbeats.model.pojo.Evento;
+import com.pabloes99.commonbeats.data.pojo.Evento;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -40,6 +39,11 @@ public class DescripcionEventoSuscritoFragment extends Fragment {
 
     }
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setRetainInstance(true);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

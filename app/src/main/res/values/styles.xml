@@ -8,11 +8,10 @@
         <item name="colorAccent">@color/secondaryColor</item>
     </style>
 
-<style name="ToolBarColor" parent="AppTheme">
-    <item name="colorPrimary">@color/primaryTextColor</item>
-    <item name="colorPrimaryDark">@color/primaryColor</item>
-</style>
-
+    <style name="ToolBarColor" parent="AppTheme">
+        <item name="colorPrimary">@color/primaryTextColor</item>
+        <item name="colorPrimaryDark">@color/primaryColor</item>
+    </style>
 
 
     <style name="SplashTheme" parent="AppTheme">

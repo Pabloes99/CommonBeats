@@ -17,8 +17,8 @@
         <activity android:name=".iu.Evento.EditarEventoCreadoActivity" />
         <activity android:name=".iu.Evento.CrearEventoActivity" />
         <activity android:name=".iu.Evento.EventoSeleccionadoActivity" />
-        <activity android:name=".iu.DashBoardActivity" />
-        <activity android:name=".iu.SignUpActivity" />
+        <activity android:name=".iu.PanelActivity" />
+        <activity android:name=".iu.RegistroActivity" />
         <activity
             android:name=".iu.LoginActivity"
             android:launchMode="singleTop" />

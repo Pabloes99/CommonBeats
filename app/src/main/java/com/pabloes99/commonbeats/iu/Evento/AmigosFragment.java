@@ -18,7 +18,7 @@ import android.widget.Toast;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.pabloes99.commonbeats.R;
 import com.pabloes99.commonbeats.adapter.AmigosAdapter;
-import com.pabloes99.commonbeats.model.pojo.Usuario;
+import com.pabloes99.commonbeats.data.pojo.Usuario;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -33,7 +33,11 @@ public class AmigosFragment extends Fragment {
     public AmigosFragment() {
         // Required empty public constructor
     }
-
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setRetainInstance(true);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

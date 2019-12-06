@@ -1,7 +1,6 @@
-package com.pabloes99.commonbeats.model.Repository;
+package com.pabloes99.commonbeats.data.Repository;
 
-import com.pabloes99.commonbeats.model.pojo.Estilo;
-import com.pabloes99.commonbeats.model.pojo.Evento;
+import com.pabloes99.commonbeats.data.pojo.Evento;
 
 import java.util.ArrayList;
 import java.util.List;

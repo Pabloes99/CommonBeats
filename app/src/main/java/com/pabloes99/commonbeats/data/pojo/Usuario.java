@@ -1,6 +1,4 @@
-package com.pabloes99.commonbeats.model.pojo;
-
-import android.text.method.DateTimeKeyListener;
+package com.pabloes99.commonbeats.data.pojo;
 
 import java.util.Date;
 

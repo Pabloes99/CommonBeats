@@ -11,7 +11,6 @@ import android.widget.Spinner;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.pabloes99.commonbeats.R;
-import com.pabloes99.commonbeats.model.pojo.Evento;
 
 public class EventoSeleccionadoActivity extends AppCompatActivity {
 

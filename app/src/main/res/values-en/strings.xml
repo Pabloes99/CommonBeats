@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">CommonBeats</string>
+    <string name="tvUser">User or email</string>
+    <string name="tvPassword">Password</string>
+    <string name="chRemember">Remember me</string>
+    <string name="btnRecuperarContrasennaToast">An email has been sent to your email address with the steps to follow ...</string>
+    <string name="btnResgistrarseConGoogleToast">You have registered with your Google account ...</string>
+    <string name="btSignUp">Sign up</string>
+    <string name="btSignIn">Log in</string>
+    <string name="btGoogle">Google</string>
+    <string name="tvOtherSign">Sign up...</string>
+    <string name="tiedUserHint">User</string>
+    <string name="tiedEmailHint">Email</string>
+    <string name="tiedPasswordHint">Password</string>
+    <string name="tvSuscripcionesText">Subscriptions</string>
+    <string name="tvCreadosText">Events Created</string>
+    <string name="tvRecuperarContrasenna">Recover password</string>
+    <string name="logoAcercaDeNosotros">Logotype</string>
+    <string name="VersionAcercaDeNosotros">Version</string>
+    <string name="versionTVAcercaDeNosotros">Version 1.0 Alpha</string>
+    <string name="desarroladorAcercaDeNosotros">Developer</string>
+    <string name="desarrolladorTVAcercaDeNosotros">Pablo Estepa Estepa</string>
+    <string name="acerca_de_miAcercaDeNosotros">About us</string>
+    <string name="emailAcercaDeNosotros">Contact me via email pabloes99@gmail.com</string>
+    <string name="acercaDeMiTVAcercaDeNosotros">
+I am Pablo Estepa, a programming student, this is the first serious application that I develop, so I wanted to bring together two of the things I like the most, music and social relations.</string>
+    <string name="tvTitulo">Title</string>
+    <string name="tvEstilo">Style</string>
+        <string name="tvFecha">Date</string>
+    <string name="tvHora">Hour</string>
+    <string name="tvLocalizacion">Location</string>
+    <string name="tvDescripcion">Description</string>
+    <string name="tvTipoDePublicacion">Tipe of publication</string>
+    <string name="tvTextollTexto">Text</string>
+    <string name="tvImagenllImagen">Image</string>
+    <string name="tvVideollVideo">Video</string>
+    <string-array name="estilos">
+        <item>Rock</item>
+        <item>Pop</item>
+        <item>Clasica</item>
+        <item>Blues</item>
+        <item>Gospel</item>
+        <item>Soul</item>
+        <item>Metal</item>
+        <item>Country</item>
+        <item>Funk</item>
+        <item>Electronica</item>
+        <item>HipHop</item>
+        <item>Flamenco</item>
+        <item>Reggateon</item>
+        <item>Trap</item>
+    </string-array>
+</resources>

@@ -1,6 +1,6 @@
-package com.pabloes99.commonbeats.model.Repository;
+package com.pabloes99.commonbeats.data.Repository;
 
-import com.pabloes99.commonbeats.model.pojo.Usuario;
+import com.pabloes99.commonbeats.data.pojo.Usuario;
 
 import java.util.ArrayList;
 import java.util.List;

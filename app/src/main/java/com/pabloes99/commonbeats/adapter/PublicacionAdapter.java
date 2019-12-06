@@ -1,6 +1,5 @@
 package com.pabloes99.commonbeats.adapter;
 
-import android.icu.text.AlphabeticIndex;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,8 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.pabloes99.commonbeats.R;
-import com.pabloes99.commonbeats.model.Repository.PublicacionRepositorio;
-import com.pabloes99.commonbeats.model.pojo.Publicacion;
+import com.pabloes99.commonbeats.data.Repository.PublicacionRepositorio;
+import com.pabloes99.commonbeats.data.pojo.Publicacion;
 
 import java.util.List;
 

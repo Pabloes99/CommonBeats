@@ -17,4 +17,5 @@
     <dimen name="tvTituloMarginTop">8dp</dimen>
     <dimen name="MisEventosLinearLayout">16dp</dimen>
     <dimen name="textViewSuscripcionLayoutMargin">8dp</dimen>
+    <dimen name="paddingGlobalLayout">16dp</dimen>
 </resources>

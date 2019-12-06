@@ -20,8 +20,8 @@ import com.pabloes99.commonbeats.R;
 import com.pabloes99.commonbeats.adapter.EventoAdapter;
 import com.pabloes99.commonbeats.adapter.EventosCreadosAdapter;
 import com.pabloes99.commonbeats.adapter.EventosSuscritosAdapter;
-import com.pabloes99.commonbeats.model.Repository.EventosCreadosRepository;
-import com.pabloes99.commonbeats.model.pojo.Evento;
+import com.pabloes99.commonbeats.data.Repository.EventosCreadosRepository;
+import com.pabloes99.commonbeats.data.pojo.Evento;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -65,6 +65,11 @@ public class EditarEventoCreadoFragment extends Fragment {
         // Required empty public constructor
     }
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setRetainInstance(true);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -84,7 +89,7 @@ public class EditarEventoCreadoFragment extends Fragment {
         tilHoraEditarEventoCreado = view.findViewById(R.id.tilHoraEditarEventoCreado);
         tilLocalizacionEditarEventoCreado = view.findViewById(R.id.tilLocalizacionEditarEventoCreado);
         tilDescripcionEditarEventoCreado = view.findViewById(R.id.tilDescripcionEditarEventoCreado);
-
+        spEstiloEditarEventoCreado = view.findViewById(R.id.spEstiloEditarEventoCreado);
         tidTituloEditarEventoCreado = view.findViewById(R.id.tidTituloEditarEventoCreado);
         tidFechaEditarEventoCreado = view.findViewById(R.id.tidFechaEditarEventoCreado);
         tidHoraEditarEventoCreado = view.findViewById(R.id.tidHoraEditarEventoCreado);
@@ -135,7 +140,7 @@ public class EditarEventoCreadoFragment extends Fragment {
             evento = bundle.getParcelable(Evento.KEY);
 
             tidTituloEditarEventoCreado.setText(evento.getTitulo());
-            //spinner
+
             tidFechaEditarEventoCreado.setText(evento.getFecha());
             tidHoraEditarEventoCreado.setText(evento.getHora());
             tidLocalizacionEditarEventoCreado.setText(evento.getLocalizacion());

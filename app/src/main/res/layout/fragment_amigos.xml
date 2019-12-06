@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:id="@android:id/content"
     android:layout_height="match_parent"
-    android:padding="16dp"
+    android:padding="@dimen/paddingGlobalLayout"
     tools:context=".iu.Evento.AmigosFragment" >
 
     <androidx.recyclerview.widget.RecyclerView

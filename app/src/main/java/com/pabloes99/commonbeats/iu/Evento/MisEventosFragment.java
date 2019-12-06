@@ -10,7 +10,6 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.EventLog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,13 +17,10 @@ import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.pabloes99.commonbeats.R;
-import com.pabloes99.commonbeats.adapter.EventoAdapter;
 import com.pabloes99.commonbeats.adapter.EventosCreadosAdapter;
 import com.pabloes99.commonbeats.adapter.EventosSuscritosAdapter;
-import com.pabloes99.commonbeats.iu.DashBoardActivity;
-import com.pabloes99.commonbeats.iu.SplashActivity;
-import com.pabloes99.commonbeats.model.Repository.EventosCreadosRepository;
-import com.pabloes99.commonbeats.model.pojo.Evento;
+import com.pabloes99.commonbeats.iu.PanelActivity;
+import com.pabloes99.commonbeats.data.pojo.Evento;
 
 public class MisEventosFragment extends Fragment {
 
@@ -39,6 +35,12 @@ public class MisEventosFragment extends Fragment {
 
     public MisEventosFragment() {
 
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setRetainInstance(true);
     }
 
     @Override
@@ -83,7 +85,7 @@ public class MisEventosFragment extends Fragment {
 
         EventoSeleccionadoFragment.pasarEventosSuscritosAdapter(eventosSuscritosAdapter);
         EditarEventoCreadoFragment.pasarEventosSuscritosAdapterEditar(eventosSuscritosAdapter);
-        DashBoardActivity.pasarEventosSuscritosAdapter(eventosSuscritosAdapter);
+        PanelActivity.pasarEventosSuscritosAdapter(eventosSuscritosAdapter);
     }
 
     private void inicializarOnClickDescripcionEventosSuscritosListener() {
@@ -123,7 +125,7 @@ public class MisEventosFragment extends Fragment {
 
         CrearEventoFragment.pasarCrearEventoAdapter(eventosCreadosAdapter);
         EditarEventoCreadoFragment.pasarEventosCreadosAdapterEditar(eventosCreadosAdapter);
-        DashBoardActivity.pasarEventosCreadosAdapter(eventosCreadosAdapter);
+        PanelActivity.pasarEventosCreadosAdapter(eventosCreadosAdapter);
 
     }
 

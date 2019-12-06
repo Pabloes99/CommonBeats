@@ -17,7 +17,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.pabloes99.commonbeats.R;
 import com.pabloes99.commonbeats.utils.CommonUtils;
 
-public class SignUpActivity extends AppCompatActivity {
+public class RegistroActivity extends AppCompatActivity {
     private Button btSignUp;
     private TextInputEditText tiedUser;
     private TextInputEditText tiedPassword;
@@ -31,7 +31,7 @@ public class SignUpActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_up);
+        setContentView(R.layout.activity_registro);
         // Se recoge todos los InputLayout
         tilUser = findViewById(R.id.tilUser);
         tilPassword1 = findViewById(R.id.tilPassword);

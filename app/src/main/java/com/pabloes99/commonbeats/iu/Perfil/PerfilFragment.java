@@ -14,8 +14,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.pabloes99.commonbeats.R;
-import com.pabloes99.commonbeats.model.Repository.UsuarioRepositorio;
-import com.pabloes99.commonbeats.model.pojo.Usuario;
+import com.pabloes99.commonbeats.data.Repository.UsuarioRepositorio;
+import com.pabloes99.commonbeats.data.pojo.Usuario;
 
 /**
  * A simple {@link Fragment} subclass.

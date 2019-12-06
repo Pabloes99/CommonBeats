@@ -18,14 +18,14 @@ import com.pabloes99.commonbeats.adapter.EventosSuscritosAdapter;
 import com.pabloes99.commonbeats.adapter.ViewPageAdapter;
 import com.pabloes99.commonbeats.iu.Evento.AcercaDeNosotrosActivity;
 import com.pabloes99.commonbeats.iu.Perfil.PerfilActivity;
-import com.pabloes99.commonbeats.model.Repository.EventoRepository;
-import com.pabloes99.commonbeats.model.Repository.EventosCreadosRepository;
-import com.pabloes99.commonbeats.model.Repository.EventosSuscritosRepository;
-import com.pabloes99.commonbeats.model.pojo.Evento;
+import com.pabloes99.commonbeats.data.Repository.EventoRepository;
+import com.pabloes99.commonbeats.data.Repository.EventosCreadosRepository;
+import com.pabloes99.commonbeats.data.Repository.EventosSuscritosRepository;
+import com.pabloes99.commonbeats.data.pojo.Evento;
 
 import java.util.Collections;
 
-public class DashBoardActivity extends AppCompatActivity {
+public class PanelActivity extends AppCompatActivity {
 
     private TabLayout tblEventos;
     private ViewPager viewPager;
@@ -86,19 +86,19 @@ public class DashBoardActivity extends AppCompatActivity {
 
 
     private void lanzarActividadPerfil() {
-        Intent intent = new Intent(DashBoardActivity.this, PerfilActivity.class);
+        Intent intent = new Intent(PanelActivity.this, PerfilActivity.class);
         startActivity(intent);
     }
 
     private void lanzarActividadAcercaDeNosotros() {
-        Intent intent = new Intent(DashBoardActivity.this, AcercaDeNosotrosActivity.class);
+        Intent intent = new Intent(PanelActivity.this, AcercaDeNosotrosActivity.class);
         startActivity(intent);
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dash_board);
+        setContentView(R.layout.activity_panel);
 
         tblEventos = findViewById(R.id.tblEventos);
         viewPager = findViewById(R.id.viewPager);

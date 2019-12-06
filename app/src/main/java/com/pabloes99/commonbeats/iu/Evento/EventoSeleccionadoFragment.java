@@ -1,7 +1,6 @@
 package com.pabloes99.commonbeats.iu.Evento;
 
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -12,7 +11,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -20,11 +18,8 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.pabloes99.commonbeats.R;
 import com.pabloes99.commonbeats.adapter.EventosSuscritosAdapter;
-import com.pabloes99.commonbeats.model.Repository.EventoRepository;
-import com.pabloes99.commonbeats.model.Repository.EventosSuscritosRepository;
-import com.pabloes99.commonbeats.model.pojo.Evento;
-
-import java.security.spec.ECField;
+import com.pabloes99.commonbeats.data.Repository.EventosSuscritosRepository;
+import com.pabloes99.commonbeats.data.pojo.Evento;
 
 
 public class EventoSeleccionadoFragment extends Fragment {
@@ -53,7 +48,11 @@ public class EventoSeleccionadoFragment extends Fragment {
     public static void pasarEventosSuscritosAdapter(EventosSuscritosAdapter eventosSuscritosAdapterD){
         eventosSuscritosAdapter = eventosSuscritosAdapterD;
     }
-
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setRetainInstance(true);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

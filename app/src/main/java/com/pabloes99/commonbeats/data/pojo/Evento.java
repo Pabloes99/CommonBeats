@@ -1,4 +1,4 @@
-package com.pabloes99.commonbeats.model.pojo;
+package com.pabloes99.commonbeats.data.pojo;
 
 
 import android.os.Parcel;
@@ -7,8 +7,6 @@ import android.os.Parcelable;
 import androidx.annotation.NonNull;
 
 import java.util.Comparator;
-import java.util.Date;
-import java.util.Objects;
 
 
 public class Evento implements Parcelable {
@@ -21,7 +19,7 @@ public class Evento implements Parcelable {
     private static int idUnico = 1;
     private int idEvento;
     private String titulo;
-    private Estilo estilo;
+    private String estilo;
     private String fecha;
     private String hora;
     private String localizacion;
@@ -30,7 +28,7 @@ public class Evento implements Parcelable {
     public Evento(){}
 
     //Constructores
-    public Evento(String titulo, Estilo estilo, String fecha, String hora, String localizacion, String descripcion) {
+    public Evento(String titulo, String estilo, String fecha, String hora, String localizacion, String descripcion) {
         this.idEvento = idUnico++;
         this.titulo = titulo;
         this.estilo = estilo;
@@ -74,11 +72,11 @@ public class Evento implements Parcelable {
         this.titulo = titulo;
     }
 
-    public Estilo getEstilo() {
+    public String getEstilo() {
         return estilo;
     }
 
-    public void setEstilo(Estilo estilo) {
+    public void setEstilo(String estilo) {
         this.estilo = estilo;
     }
 
